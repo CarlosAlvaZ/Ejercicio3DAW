@@ -44,7 +44,6 @@ const diccionario ={
     "Bitácora": "Libro en que se anotan los incidentes del viaje.",
     "Búnker": "Refugio construido con gruesas paredes.",
     "Caos": "Estado en el que se hallaban las cosas al momento de su creación.",
-    "Caja negra": "Artefacto en el que se graba la conversación entre el capitán de un avión y la torre de control.",
     "Carecer": "Estar privado de alguna cosa. No tener.",
     "Carisma": "Agradar. Hacer favores.",
     "Certeza": "Conocimiento seguro y claro de alguna cosa.",
@@ -76,7 +75,7 @@ input.addEventListener("input", ()=>{
     list.innerHTML = ""
     for(i in keys){
         if(regEx.test(keys[i])){
-            list.innerHTML += `<li data-key=${keys[i]}>${keys[i]}</li>`
+            list.innerHTML += `<li data-key="${keys[i]}">${keys[i]}</li>`
         }
         else{
             continue
@@ -93,7 +92,7 @@ input.addEventListener("input", ()=>{
 mostrar.addEventListener("click", ()=>{
     let aux = input.value
     if(diccionario[aux]){
-        definition.value = diccionario[aux]
+        definition.innerHTML = diccionario[aux]
     }else{
         definition.value = "No se ha encontrado ninguna definicion"
     }
